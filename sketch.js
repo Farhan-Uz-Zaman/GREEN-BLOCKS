@@ -51,6 +51,15 @@ function draw() {
             gameover();
             previousFrame();
         }
+        if (score > 500) {
+            redBlocks[i].speed = 7;
+        }
+        if (score > 650) {
+            redBlocks[i].speed = 10;
+        }
+        if (score > 800) {
+            redBlocks[i].speed = 12;
+        }
 
     }
 
@@ -60,7 +69,9 @@ function draw() {
         if (greenBlocks[i].hits(ball)) {
             score += 1;
         }
-
+        if (score > 800) {
+            greenBlocks[i].speed = 2;
+        }
 
     }
     showScores();
